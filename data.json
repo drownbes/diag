@@ -1,0 +1,20 @@
+{ "chart": {
+	"set": [
+	{
+		"label" : "Колонка 1",
+		"value" : 500,
+		"color" : "green"
+	},
+	{
+		"label" : "Колонка 2",
+		"value" : 600,
+		"color" : "red"
+	},
+	{
+		"label" : "Колонка 3",
+		"value" : 899,
+		"color" : "blue"
+	}
+	]
+	}
+}
