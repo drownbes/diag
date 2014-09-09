@@ -91,8 +91,8 @@ module.exports = function (grunt) {
                 }]
             },
 			misc: {
-				src: 'data.json',
-				dest: '<%= config.dist %>/'
+				src: '<%= config.app %>/api/data.json',
+				dest: '<%= config.dist %>/data.json'
 			}
 		},
 
@@ -151,6 +151,7 @@ module.exports = function (grunt) {
 			'newer:jade',
 			'newer:sass',
 			'newer:copy:js',
+			'newer:copy:misc',
             'connect',
             'watch'
         ]);
@@ -163,6 +164,7 @@ module.exports = function (grunt) {
 			'jade',
 			'sass',
 			'copy:js',
+			'copy:misc',
         ]);
     });
 
