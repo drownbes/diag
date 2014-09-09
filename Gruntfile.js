@@ -89,7 +89,11 @@ module.exports = function (grunt) {
                         'js/{,*/}*.js',
                     ]
                 }]
-            }
+            },
+			misc: {
+				src: 'data.json',
+				dest: '<%= config.dist %>/'
+			}
 		},
 
 		clean: {
@@ -107,7 +111,6 @@ module.exports = function (grunt) {
 				src: ['<%= config.app %>/{,*/}*.jade']
 			}
 		},
-
 		jade : {
 			options: {
 				pretty:true
@@ -132,9 +135,13 @@ module.exports = function (grunt) {
 				ext: '.css',   // Dest filepaths will have this extension.
 				extDot: 'first'
 			}
+		},
+		'gh-pages': {
+			options: {
+				base: '<%= config.dist %>'
+			},
+			src: ['**']
 		}
-
-
 	});
 
 	grunt.registerTask('debug', 'Watch files and run webserver on 9000 port', function () {
