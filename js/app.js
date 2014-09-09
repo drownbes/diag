@@ -156,17 +156,12 @@ var diagram = (function() {
 		};
 
 		self.onresize = function() {
-			if(window.innerWidth < width || window.innerHeight < height) {
+			var wiw = window.innerWidth,
+				wih = window.innerHeight;
+			if(wiw != width || wih != height) {
 				console.log('need redraw');
-				self.el.width = window.innerWidth;
-				self.el.height = window.innerHeight;
-				self.calc_view_info();
-				self.redraw();
-			}
-			else if(window.innerWidth > width || window.innerHeight > height) {
-				console.log("expected size");
-				self.el.width = width;
-				self.el.height = height;
+				self.el.width = (wiw > width) ? width:wiw;
+				self.el.height= (wih > height) ? height:wih;
 				self.calc_view_info();
 				self.redraw();
 			}
